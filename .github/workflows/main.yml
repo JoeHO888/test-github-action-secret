@@ -18,5 +18,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: gh secret set MYSECRET < test
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - run: echo "Hello $MYSECRET"
