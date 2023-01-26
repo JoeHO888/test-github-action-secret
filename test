@@ -1,0 +1,13 @@
+---
+  - name: Test
+    hosts: all
+    gather_facts: no
+    tasks:
+      - name: Get hostname
+        shell:
+          hostname
+      - name: Copy file
+        fetch:
+          src: /home/user/abc
+          dest: /abc
+          flat: yes
