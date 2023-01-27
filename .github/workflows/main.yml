@@ -17,7 +17,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: cat ${{ github.workspace }}/test
-      - run: gh secret set MYSECRET < /test
+      - run: gh secret set MYSECRET < ${{ github.workspace }}/test
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - run: |
