@@ -23,4 +23,5 @@ jobs:
       - run: echo $MYSECRET > efg
         env:
           MYSECRET: ${{ secrets.MYSECRET}}
+      - run: ls
       - run: cat efg
