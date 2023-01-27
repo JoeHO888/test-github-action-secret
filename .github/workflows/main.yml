@@ -17,12 +17,12 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: cat ${{ github.workspace }}/test
-      - run: gh secret set MYSECRET --body "abc"
+      - run: gh variables set MYVARIABLE --body "abc"
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - run: echo fsf > efg
-      - run: echo $MYSECRET >> efg
+      - run: echo $MYVARIABLE >> efg
         env:
-          MYSECRET: ${{ secrets.MYSECRET}}
+          MYSECRET: ${{ variables.MYSECRET}}
       - run: ls
       - run: cat efg
