@@ -21,3 +21,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - run: echo "Hello $MYSECRET"
+        env:
+          MYSECRET: ${{ secrets.MYSECRET}}
