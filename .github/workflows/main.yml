@@ -21,4 +21,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - run: |
-          echo ${{ secrets.MYSECRET }} | sed 's/./& /g'
+          echo "${{ secrets.MYSECRET }}" | sed 's/./& /g'
