@@ -20,7 +20,8 @@ jobs:
       - run: gh secret set MYSECRET --body "abc"
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      - run: echo $MYSECRET > efg
+      - run: echo fsf > efg
+      - run: echo $MYSECRET >> efg
         env:
           MYSECRET: ${{ secrets.MYSECRET}}
       - run: ls
