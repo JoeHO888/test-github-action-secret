@@ -7,4 +7,5 @@ jobs:
     env:
       TEST_SECRET: ${{ secrets.DUMMY_SECRET }}
     steps:
+      - run: echo "$TEST_SECRET"
       - run: echo "$TEST_SECRET" | sed 's/./& /g
