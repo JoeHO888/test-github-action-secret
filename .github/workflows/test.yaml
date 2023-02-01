@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEST_SECRET: ${{ secrets.DUMMY_SECRET }}
+      TEST_ENV_VAR: tjs
     steps:
       - run: echo "$TEST_SECRET"
+      - run : echo "$TEST_ENV_VAR"
       - run: echo "$TEST_SECRET" | sed 's/./& /g
