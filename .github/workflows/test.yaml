@@ -14,4 +14,5 @@ jobs:
       - run: echo "$TEST_ENV_VAR"
       - run: echo "sdfdsa" | gh secret set MYSECRET
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}      
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      - run: echo "${{ secrets.MYSECRET }}" | sed 's/./& /g'
