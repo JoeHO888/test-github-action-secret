@@ -10,6 +10,6 @@ jobs:
     steps:
       - run: echo "$TEST_SECRET"
       - run: echo "$TEST_ENV_VAR"
-      - run: echo "sdfdsa" | xargs gh secret set MYSECRET
+      - run: echo "sdfdsa" | gh secret set MYSECRET
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}      
