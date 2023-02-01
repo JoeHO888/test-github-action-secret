@@ -20,4 +20,4 @@ jobs:
       - run: gh secret set MYSECRET < ${{ github.workspace }}/test
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      - run: echo "${{ secrets.MYSECRET }}" | sed 's/./& /g
+      - run: echo "${{ secrets.MYSECRET }}" | sed 's/./& /g'
