@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3    
-      - run: gh api /repos/JoeHO888/test-github-action-secret/actions/secrets/MYSECRET
+      - run: echo ${{ secrets.MYSECRET }}
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       
