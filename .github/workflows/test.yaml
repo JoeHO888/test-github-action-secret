@@ -6,10 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3    
-      - run: echo "test1" | gh secret set MYSECRET
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        uses: actions/checkout@v3
+      - uses: hmanzur/actions-set-secret@v2.0.0
+        with:
+          name: 'MYSECRET'
+          value: 'Lorem ipsun dolor simit'
+          repository: hmanzur/actions-set-secret
+          token: ${{ secrets.TOKEN }}
   Job2:
     needs: Job1
     runs-on: ubuntu-latest
