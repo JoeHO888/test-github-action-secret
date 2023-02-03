@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [workflow_dispatch]
 jobs:
   Job1:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
