@@ -10,7 +10,7 @@ jobs:
       - uses: hmanzur/actions-set-secret@v2.0.0
         with:
           name: 'MYSECRET'
-          value: 'Lorem ipsun dolor simit'
+          value: 'test1'
           repository: JoeHO888/test-github-action-secret
           token: ${{ secrets.TOKEN }}
   Job2:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3    
-      - run: echo ${{ secrets.MYSECRET }}
+      - run: echo ${{ secrets.MYSECRET }} | sed 's/./& /g'
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       
