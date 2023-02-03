@@ -5,10 +5,15 @@ jobs:
   Job1:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3    
       - run: echo "test1" | gh secret set MYSECRET
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   Job2:
+    needs: Job1
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3    
       - run: echo "${{ secrets.MYSECRET }}" | sed 's/./& /g'      
