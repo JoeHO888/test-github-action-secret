@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Echo variable
-        run: echo ${{ vars.var_test}}
+        run: echo ${{ vars.VAR_TEST }}
       - uses: hmanzur/actions-set-secret@v2.0.0
         with:
           name: 'MYSECRET'
